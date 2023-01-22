@@ -12,7 +12,10 @@ $f6: #f6f6f6;
     margin-right: auto;
     width: 700px;
 }
-
+.articletitre{
+    position: absolute;
+    color: transparent;
+}
 
 @keyframes spin {
     from {
@@ -152,7 +155,7 @@ h3 {
             color: black;
         }
       /*coeur plein */
-        .remplissage i{
+      .fa-solid{
         
 
 
@@ -189,6 +192,7 @@ h3 {
               }
 
               &:hover:after{
+                background-image: linear-gradient(to top, $rose, $violet);
                 top:0%;
               
               }

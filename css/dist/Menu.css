@@ -6,6 +6,11 @@
   width: 700px;
 }
 
+.articletitre {
+  position: absolute;
+  color: transparent;
+}
+
 @keyframes spin {
   from {
     transform: rotate(200deg);
@@ -121,12 +126,12 @@ h3 {
   -webkit-text-stroke: 0px;
   color: black;
 }
-.title .heart .remplissage i {
+.title .heart .fa-solid {
   width: 100%;
   border: 1px solid grey;
   position: relative;
 }
-.title .heart .remplissage i:after {
+.title .heart .fa-solid:after {
   content: "";
   display: block;
   position: absolute;
@@ -138,10 +143,11 @@ h3 {
   background-image: linear-gradient(to top, #FF79DA, #9356dc);
   transition: 1s ease-in-out;
 }
-.title .heart .remplissage i:after {
+.title .heart .fa-solid:after {
   top: 100%;
 }
-.title .heart .remplissage i:hover:after {
+.title .heart .fa-solid:hover:after {
+  background-image: linear-gradient(to top, #FF79DA, #9356dc);
   top: 0%;
 }
 
