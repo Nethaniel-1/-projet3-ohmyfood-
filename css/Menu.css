@@ -1,9 +1,9 @@
 @charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600&family=Shrikhand&display=swap");
-.container-category {
-  margin-left: auto;
-  margin-right: auto;
-  width: 700px;
+.entrées,
+.Plats,
+.Desssert {
+  min-width: 375px;
 }
 
 .articletitre {
@@ -72,6 +72,7 @@ header i {
 header p {
   font-size: 35px;
   margin-left: auto;
+  /*test*/
   margin-right: auto;
 }
 
@@ -104,7 +105,7 @@ h3 {
   font-style: italic;
   font-weight: 400;
 }
-.title .left\/right {
+.title .leftright {
   display: flex;
   justify-content: space-between;
   margin: 8px;
@@ -115,40 +116,38 @@ h3 {
   background-clip: text;
   -webkit-background-clip: text;
 }
+.title .fa-solid {
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+}
 .title .heart {
   display: block;
   position: relative;
   font-size: 20px;
-  /*coeur plein */
 }
 .title .heart .fa-regular.fa-heart {
   font-size: 165%;
   -webkit-text-stroke: 0px;
   color: black;
 }
-.title .heart .fa-solid {
+.title .heart .remplissage {
+  font-size: 33px;
   width: 100%;
-  border: 1px solid grey;
-  position: relative;
-}
-.title .heart .fa-solid:after {
-  content: "";
-  display: block;
+  height: 0;
   position: absolute;
-  bottom: 0;
-  top: 0;
   left: 0;
-  right: 0;
-  z-index: 1;
-  background-image: linear-gradient(to top, #FF79DA, #9356dc);
-  transition: 1s ease-in-out;
+  transform-origin: bottom;
+  transition: all 1.2s ease-in-out 0.3s;
 }
-.title .heart .fa-solid:after {
-  top: 100%;
+.title .heart .remplissage:hover {
+  cursor: pointer;
+  height: 100%;
 }
-.title .heart .fa-solid:hover:after {
+.title .heart .remplissage:hover .fa-solid {
+  height: 100%;
   background-image: linear-gradient(to top, #FF79DA, #9356dc);
-  top: 0%;
+  position: absolute;
 }
 
 /********************SECTIONS************************/
@@ -206,6 +205,8 @@ h3 {
   position: relative;
   overflow: hidden;
   max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 h2 {
@@ -348,8 +349,6 @@ section > div .item__price .check-box i {
   align-items: center;
   cursor: pointer;
   font-size: 16px;
-  margin-left: auto;
-  margin-right: auto;
   margin-bottom: 41px;
   margin-top: 50px;
   height: 44px;
@@ -422,5 +421,12 @@ footer ol {
   .footer ul {
     display: flex;
     justify-content: space-around;
+  }
+}
+@media screen and (min-width: 470px) {
+  body {
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
   }
 }
