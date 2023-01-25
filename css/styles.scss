@@ -334,15 +334,10 @@ p {
 
 
     &:hover {
-    
         background-color:var(--roseclair);
 
         i {
             color: #9356dc;
-        }
-        &:hover::after{
-            transform: scale(1.02);
-opacity: 0.9;
         }
     }
 }
@@ -431,6 +426,7 @@ opacity: 0.9;
             color: black;
         }
 
+
         .remplissage {
             font-size: 22px;
             width: 100%;
@@ -438,17 +434,18 @@ opacity: 0.9;
             position: absolute;
             left: 0;
             // bottom: 0;
-           
+            transform-origin: bottom;
             transition: all 1.2s ease-in-out 0.3s;
 
 
             &:hover {
+                cursor: pointer;
                 height: 100%;
-                transform-origin: bottom;
+                
 
                 .fa-solid {
                     height: 100%;
-                    background-image: linear-gradient(to top, --rose, --violet);
+                    background-image: linear-gradient(to top, #FF79DA, #9356dc);
 
                     
                     position: absolute;
@@ -456,11 +453,7 @@ opacity: 0.9;
 
                 }
             }
-
-
         }
-
-
     }
 
     img {

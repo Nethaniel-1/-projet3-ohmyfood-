@@ -240,10 +240,6 @@ p {
 .Choice__item:hover i {
   color: #9356dc;
 }
-.Choice__item:hover:hover::after {
-  transform: scale(1.02);
-  opacity: 0.9;
-}
 
 /***********************RESTAURANT*****************************/
 .restaurants {
@@ -315,15 +311,16 @@ p {
   height: 0;
   position: absolute;
   left: 0;
+  transform-origin: bottom;
   transition: all 1.2s ease-in-out 0.3s;
 }
 .restaurants__card .heart .remplissage:hover {
+  cursor: pointer;
   height: 100%;
-  transform-origin: bottom;
 }
 .restaurants__card .heart .remplissage:hover .fa-solid {
   height: 100%;
-  background-image: linear-gradient(to top, --rose, --violet);
+  background-image: linear-gradient(to top, #FF79DA, #9356dc);
   position: absolute;
 }
 .restaurants__card img {
