@@ -334,10 +334,15 @@ p {
 
 
     &:hover {
+    
         background-color:var(--roseclair);
 
         i {
             color: #9356dc;
+        }
+        &:hover::after{
+            transform: scale(1.02);
+opacity: 0.9;
         }
     }
 }
@@ -379,6 +384,11 @@ p {
     // max-width: 440px;
     max-width: 99%;
     position: relative;
+
+    &:hover{
+        transform: scale(1.02);
+opacity: 0.9;
+    }
 
     .new {
         position: absolute;
