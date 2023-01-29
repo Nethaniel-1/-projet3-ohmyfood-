@@ -1,49 +1,74 @@
 @charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600&family=Shrikhand&display=swap");
-.entrées,
-.Plats,
-.Desssert {
-  min-width: 375px;
+
+.container-category {
+  margin-left: auto;
+  margin-right: auto;
+  width: 700px;
 }
 
-.articletitre {
-  position: absolute;
-  color: transparent;
+@-webkit-keyframes spin {
+  from {
+    transform: rotate(200deg);
+  }
+
+  to {
+    transform: rotate(390deg);
+    transform-origin: 50% 50%;
+  }
 }
 
 @keyframes spin {
   from {
     transform: rotate(200deg);
   }
+
   to {
     transform: rotate(390deg);
     transform-origin: 50% 50%;
   }
 }
-@keyframes rotation {
+
+@-webkit-keyframes rotation {
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
 }
-@keyframes fill {
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@-webkit-keyframes fill {
   from {
     transform: translateX(100%);
   }
+
   to {
     transform: translateX(0);
   }
 }
-@keyframes remplissageBasHaut {
+
+@keyframes fill {
   from {
-    transform: translateY(100%);
+    transform: translateX(100%);
   }
+
   to {
-    transform: translateY(0);
+    transform: translateX(0);
   }
 }
+
 body {
   font-family: "roboto", sans-serif;
   margin: 0;
@@ -64,22 +89,25 @@ header {
   padding-right: 0;
   border-left: none;
 }
+
 header i {
   font-size: 30px;
   color: black;
   padding-left: 12px;
 }
+
 header p {
   font-size: 35px;
   margin-left: auto;
-  /*test*/
   margin-right: auto;
 }
 
 .image {
   position: relative;
 }
+
 .image img {
+  -o-object-fit: cover;
   object-fit: cover;
   width: 100%;
   height: 333px;
@@ -99,54 +127,56 @@ h3 {
   margin-top: -76px;
   margin-bottom: 200px;
 }
+
 .title h3 {
   font-size: 27px;
   font-family: "Shrikhand", cursive;
   font-style: italic;
   font-weight: 400;
 }
-.title .leftright {
+
+.title .left\/right {
   display: flex;
   justify-content: space-between;
   margin: 8px;
   align-items: center;
 }
+
 .title .fa-solid {
   color: transparent;
   background-clip: text;
   -webkit-background-clip: text;
 }
-.title .fa-solid {
-  color: transparent;
-  background-clip: text;
-  -webkit-background-clip: text;
-}
+
 .title .heart {
   display: block;
   position: relative;
   font-size: 20px;
+  -webkit-text-stroke: 2px;
 }
+
 .title .heart .fa-regular.fa-heart {
   font-size: 165%;
   -webkit-text-stroke: 0px;
   color: black;
 }
+
 .title .heart .remplissage {
-  font-size: 33px;
+  font-size: 30px;
   width: 100%;
   height: 0;
   position: absolute;
   left: 0;
-  transform-origin: bottom;
   transition: all 1.2s ease-in-out 0.3s;
 }
+
 .title .heart .remplissage:hover {
-  cursor: pointer;
   height: 100%;
 }
+
 .title .heart .remplissage:hover .fa-solid {
-  height: 100%;
   background-image: linear-gradient(to top, #FF79DA, #9356dc);
+  height: 100%;
   position: absolute;
 }
 
@@ -156,29 +186,39 @@ h3 {
 .Desssert {
   padding-top: 20px;
 }
+
 .entrées .Menu-item:nth-child(1),
 .Plats .Menu-item:nth-child(1),
 .Desssert .Menu-item:nth-child(1) {
+  -webkit-animation: apparitionPlat 700ms ease 300ms forwards;
   animation: apparitionPlat 700ms ease 300ms forwards;
 }
+
 .entrées .Menu-item:nth-child(2),
 .Plats .Menu-item:nth-child(2),
 .Desssert .Menu-item:nth-child(2) {
+  -webkit-animation: apparitionPlat 700ms ease 600ms forwards;
   animation: apparitionPlat 700ms ease 600ms forwards;
 }
+
 .entrées .Menu-item:nth-child(3),
 .Plats .Menu-item:nth-child(3),
 .Desssert .Menu-item:nth-child(3) {
+  -webkit-animation: apparitionPlat 700ms ease 900ms forwards;
   animation: apparitionPlat 700ms ease 900ms forwards;
 }
+
 .entrées .Menu-item:nth-child(4),
 .Plats .Menu-item:nth-child(4),
 .Desssert .Menu-item:nth-child(4) {
+  -webkit-animation: apparitionPlat 700ms ease 1200ms forwards;
   animation: apparitionPlat 700ms ease 1200ms forwards;
 }
+
 .entrées .Menu-item:nth-child(5),
 .Plats .Menu-item:nth-child(5),
 .Desssert .Menu-item:nth-child(5) {
+  -webkit-animation: apparitionPlat 700ms ease 1500ms forwards;
   animation: apparitionPlat 700ms ease 1500ms forwards;
 }
 
@@ -191,22 +231,34 @@ h3 {
   margin-bottom: -18px;
 }
 
-@keyframes apparitionPlat {
+@-webkit-keyframes apparitionPlat {
   from {
     opacity: 0;
     transform: translateY(-10px);
   }
+
   to {
     opacity: 1;
     transform: none;
   }
 }
+
+@keyframes apparitionPlat {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
 .Menu-item {
   position: relative;
   overflow: hidden;
   max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 h2 {
@@ -215,6 +267,7 @@ h2 {
   margin-left: 10px;
   font-size: 20px;
 }
+
 h2::after {
   content: "";
   display: block;
@@ -230,7 +283,7 @@ section {
   padding-bottom: 1px;
 }
 
-section > div {
+section>div {
   display: flex;
   border: 1px solid #f7f7f7;
   margin: 19px;
@@ -248,29 +301,35 @@ section > div {
   justify-content: space-between;
   overflow: hidden;
 }
-section > div h3 {
+
+section>div h3 {
   block-size: 25px;
   text-overflow: ellipsis;
   overflow: hidden;
 }
-section > div p {
+
+section>div p {
   font-weight: 300;
   overflow: hidden;
   text-overflow: ellipsis;
 }
-section > div .item__text {
+
+section>div .item__text {
   margin-left: -45px;
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
 }
-section > div .item__text p {
+
+section>div .item__text p {
   margin-top: -19px;
 }
-section > div .item__text h3 {
+
+section>div .item__text h3 {
   font-size: 17px;
 }
-section > div .item__price p {
+
+section>div .item__price p {
   font-size: 14px;
   font-weight: bold;
   position: relative;
@@ -278,12 +337,14 @@ section > div .item__price p {
   left: -10px;
   margin-right: 10px;
 }
-section > div .item__price .Menu-item,
-section > div .item__price .item__text,
-section > div .item__price .item__price {
+
+section>div .item__price .Menu-item,
+section>div .item__price .item__text,
+section>div .item__price .item__price {
   padding: 10px;
 }
-section > div .item__price .check-box {
+
+section>div .item__price .check-box {
   color: white;
   position: absolute;
   background-color: #99e2d0;
@@ -297,7 +358,8 @@ section > div .item__price .check-box {
   cursor: pointer;
   transition: all 500ms;
 }
-section > div .item__price .check-box i {
+
+section>div .item__price .check-box i {
   font-size: 28px;
 }
 
@@ -327,13 +389,14 @@ section > div .item__price .check-box i {
   margin-bottom: 41px;
   margin-top: 50px;
 }
+
 .btn:hover {
   transform: scale(1.02);
   opacity: 0.9;
 }
 
 .btn {
-  background: linear-gradient(166deg, #ff7ad9 0%, #9356dc 100%);
+  background: linear-gradient(166deg, hsl(317deg, 100%, 74%) 0%, #9356dc 100%);
   color: white;
   border: none;
   border-radius: 30px;
@@ -349,6 +412,8 @@ section > div .item__price .check-box i {
   align-items: center;
   cursor: pointer;
   font-size: 16px;
+  margin-left: auto;
+  margin-right: auto;
   margin-bottom: 41px;
   margin-top: 50px;
   height: 44px;
@@ -357,24 +422,31 @@ section > div .item__price .check-box i {
 .Menu-item:hover {
   cursor: pointer;
 }
+
 .Menu-item:hover .check-box__icone {
   display: inline;
   transition: transform 0.5s;
-  animation: rotation 0.5s infinite linear;
+  -webkit-animation: rotation 1s infinite linear;
+  animation: rotation 1s infinite linear;
 }
+
 .Menu-item:hover .check-box {
   display: flex;
   padding-right: 0;
   position: relative;
-  animation: fill 0.5s linear forwards;
+  -webkit-animation: fill 0.1s linear forwards;
+  animation: fill 0.1s linear forwards;
   width: 100%;
   overflow: hidden;
   transform: translateX(100%);
 }
+
 .Menu-item:hover .check-box i {
+  -webkit-animation: spin 1s linear;
   animation: spin 1s linear;
   margin-top: -18px;
 }
+
 .Menu-item:hover .item__price p {
   padding-right: 50px;
   margin-top: 58px;
@@ -386,28 +458,35 @@ footer {
   background-color: #353535;
   padding: 10px;
 }
+
 footer img {
   width: 122px;
   margin-left: 12px;
 }
+
 footer i {
   margin-right: 10px;
 }
+
 footer a {
   color: white;
   margin-left: -28px;
   text-decoration: none;
 }
+
 footer a:hover {
   color: gray;
 }
+
 footer ul {
   list-style: none;
 }
+
 footer li {
   padding-bottom: 10px;
   text-decoration: none;
 }
+
 footer ol {
   list-style: none;
 }
@@ -418,15 +497,11 @@ footer ol {
     margin: auto;
     padding-bottom: 40px;
   }
+
   .footer ul {
     display: flex;
     justify-content: space-around;
   }
 }
-@media screen and (min-width: 470px) {
-  body {
-    margin-left: auto;
-    margin-right: auto;
-    width: 100%;
-  }
-}
+
+/*# sourceMappingURL=Menu.css.map */

@@ -7,21 +7,12 @@ $rose: #FF79DA;
 $roseclair: #f5edff;
 $f6: #f6f6f6;
 
-.entrées,
-.Plats,
-.Desssert{
-    min-width: 375px;
-    // width: 10px; /*test reparation probleme */
-}
 .container-category {
-    // margin-left: auto;/*test*/
-    // margin-right: auto;
+    margin-left: auto;
+    margin-right: auto;
+    width: 700px;
+}
 
-}
-.articletitre{
-    position: absolute;
-    color: transparent;
-}
 
 @keyframes spin {
     from {
@@ -55,15 +46,7 @@ $f6: #f6f6f6;
         transform: translateX(0);
     }
 }
-@keyframes remplissageBasHaut {
-    from {
-        transform: translateY(100%);
-    }
 
-    to {
-        transform: translateY(0);
-    }
-}
 
 
 body {
@@ -96,7 +79,7 @@ header {
     p {
         font-size: 35px;
 
-        margin-left: auto;/*test*/
+        margin-left: auto;
         margin-right: auto;
     }
 
@@ -135,7 +118,7 @@ h3 {
 
     }
 
-    .leftright {
+    .left\/right {
         display: flex;
         justify-content: space-between;
         margin: 8px;
@@ -148,19 +131,11 @@ h3 {
         -webkit-background-clip: text;
     }
 
-
-    .fa-solid {
-        color: transparent;
-
-        background-clip: text;
-        -webkit-background-clip: text;
-    }
-
     .heart {
         display: block;
         position: relative;
         font-size: 20px;
-    
+        -webkit-text-stroke: 2px;
 
 
         .fa-regular.fa-heart {
@@ -170,65 +145,26 @@ h3 {
         }
 
         .remplissage {
-            font-size: 33px;
+            font-size: 30px;
             width: 100%;
             height: 0;
             position: absolute;
             left: 0;
-            // bottom: 0;
-            transform-origin: bottom;
             transition: all 1.2s ease-in-out 0.3s;
 
 
             &:hover {
-                cursor: pointer;
                 height: 100%;
-                
 
                 .fa-solid {
+                    background-image: linear-gradient(to top, $rose, $violet);
                     height: 100%;
-                    background-image: linear-gradient(to top, #FF79DA, #9356dc);
-
-                    
                     position: absolute;
-
-
                 }
             }
         }
     }
 }
-    //    &:hover{
-    //     .fa-solid{
-           
-    //         font-size: 33px;
-    //         width:100%; 
-    //         border:1px solid grey;
-    //         position:relative;
-    //         overflow:hidden;
-    //        &::after{content:'';
-    //        display:block;
-    //          position:absolute;
-    //         bottom:0;
-    //         top:0;
-    //         left:0;
-    //         right:0;
-    //        z-index:1;
-    //        background-image: linear-gradient(to top, $rose, $violet);
-    //        }
-    //             transition: all 3s ease-in-out ;
-    //          }
-    //           &:after{
-    //             top:100%;
-    //           }
-
-    //           &:hover:after{
-    //             background-image: linear-gradient(to top, $rose, $violet);
-    //             top:0%;
-    //           } 
-    //          }
-    // } 
-// }
 
 /********************SECTIONS************************/
 .entrées,
@@ -277,8 +213,6 @@ h3 {
     position: relative;
     overflow: hidden;
     max-width: 600px;
-    margin-left: auto;
-margin-right: auto;
 }
 
 h2 {
@@ -449,8 +383,8 @@ section>div {
     align-items: center;
     cursor: pointer;
     font-size: 16px;
-    // margin-left: auto; /*compris dans body */
-    // margin-right: auto;/*de meme */
+    margin-left: auto;
+    margin-right: auto;
     margin-bottom: 41px;
     margin-top: 50px;
     height: 44px;
@@ -464,14 +398,14 @@ section>div {
 
         display: inline;
         transition: transform 0.5s;
-        animation: rotation 0.5s infinite linear;
+        animation: rotation 1s infinite linear;
     }
 
     .check-box {
         display: flex;
         padding-right: 0;
         position: relative;
-        animation: fill 0.5s linear forwards;
+        animation: fill 0.1s linear forwards;
         width: 100%;
         overflow: hidden;
         transform: translateX(100%);
@@ -538,6 +472,10 @@ footer {
     }
 }
 
+@media screen and (max-width: 496px) {
+    .Menu-item {}
+}
+
 @media screen and (min-width: 768px) {
 
     .footer {
@@ -551,12 +489,5 @@ footer {
             display: flex;
             justify-content: space-around;
         }
-    }
-}
-@media screen and (min-width: 470px){
-    body{
-        margin-left: auto;
-        margin-right: auto;
-        width: 100%;
     }
 }
